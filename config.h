@@ -5,7 +5,7 @@ static const unsigned int borderpx  = 3;        /* border pixel of windows */
 static const unsigned int snap      = 32;       /* snap pixel */
 static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 1;        /* 0 means bottom bar */
-static const char *fonts[]          = { "undefined-medium:size=10" };
+static const char *fonts[]          = { "JetBrains Mono :size=12" };
 static const char col_gray1[]       = "#222222";
 static const char col_gray2[]       = "#665c54";
 static const char col_gray3[]       = "#bbbbbb";
@@ -33,7 +33,7 @@ static const Rule rules[] = {
 /* layout(s) */
 static const float mfact     = 0.55; /* factor of master area size [0.05..0.95] */
 static const int nmaster     = 1;    /* number of clients in master area */
-static const int resizehints = 1;    /* 1 means respect size hints in tiled resizals */
+static const int resizehints = 0;    /* 1 means respect size hints in tiled resizals */
 
 static const Layout layouts[] = {
 	/* symbol     arrange function */
@@ -58,12 +58,12 @@ static const Layout layouts[] = {
 static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
 static const char *dmenucmd[] = { "dmenu_run", NULL };
 static const char *termcmd[]  = { "st", NULL };
-static const char *chromium[] = { "chromium", NULL};
+static const char *chromium[] = { "google-chrome-stable", NULL};
 static const char *scrot [] = { "scrot", NULL};
 
 static Key keys[] = {
 	/* modifier                     key        function        argument */
-	{ MODKEY,			XK_d,      spawn,          SHCMD("dmenu_run -nf '#F8F8F2' -nb '#282828' -sb '#689d68' -sf '#F8F8F2' -fn 'undefined-10' -p 'dmenu'") },
+	{ MODKEY,			XK_d,      spawn,          SHCMD("dmenu_run -nf '#F8F8F2' -nb '#282828' -sb '#689d68' -sf '#F8F8F2' -fn 'JetBrains Mono-12' -p 'dmenu'") },
 	{ MODKEY|ShiftMask,		XK_Return, spawn,	   {.v = chromium } },
 	{ MODKEY,             		XK_Return, spawn,          {.v = termcmd } },
 	{ MODKEY,                       XK_b,      togglebar,      {0} },
@@ -71,8 +71,8 @@ static Key keys[] = {
 	{ MODKEY,                       XK_Up,     focusstack,     {.i = -1 } },
 	{ MODKEY,                       XK_e,      incnmaster,     {.i = +1 } },
 	{ MODKEY,                       XK_r,      incnmaster,     {.i = -1 } },
-	{ MODKEY,                       XK_Left,   setmfact,       {.f = -0.05} },
-	{ MODKEY,                       XK_Right,  setmfact,       {.f = +0.05} },
+	{ MODKEY,                       XK_Left,   setmfact,       {.f = -0.02} },
+	{ MODKEY,                       XK_Right,  setmfact,       {.f = +0.02} },
 	{ MODKEY,                       XK_g, 	   zoom,           {0} },
 	{ MODKEY,                       XK_Tab,    view,           {0} },
 	{ MODKEY|ShiftMask,             XK_q,      killclient,     {0} },
