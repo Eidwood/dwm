@@ -91,8 +91,8 @@ static Key keys[] = {
 	{ MODKEY|ShiftMask,             XK_Down,   setgaps,        {.i = -1 } },
 	{ MODKEY|ShiftMask,             XK_Up,     setgaps,        {.i = +1 } },
 	{ MODKEY|ShiftMask,             XK_Right,  setgaps,        {.i = 0  } },
-	{ MODKEY,              XK_i,           view_adjacent,  { .i = +1 } },
-	{ MODKEY,              XK_u,           view_adjacent,  { .i = -1 } },
+	{ MODKEY,              		XK_i,           view_adjacent,  { .i = +1 } },
+	{ MODKEY,              		XK_u,           view_adjacent,  { .i = -1 } },
 	TAGKEYS(                        XK_1,                      0)
 	TAGKEYS(                        XK_2,                      1)
 	TAGKEYS(                        XK_3,                      2)
@@ -104,9 +104,11 @@ static Key keys[] = {
 	TAGKEYS(                        XK_9,                      8)
 	{ MODKEY|ShiftMask,             XK_e,      quit,           {0} },
 	{ MODKEY,			XK_Print,  spawn,	   {.v = scrot } },
-    	{0,   XF86XK_AudioLowerVolume,  spawn, SHCMD("pactl set-sink-volume @DEFAULT_SINK@ -10%")},
-    	{0,   XF86XK_AudioRaiseVolume,  spawn, SHCMD("pactl set-sink-volume @DEFAULT_SINK@ +10%")},
-    	{0,   XF86XK_AudioMute,         spawn, SHCMD("pactl set-sink-mute @DEFAULT_SINK@ toggle")},
+    	{0,   				XF86XK_AudioLowerVolume,  spawn, SHCMD("pactl set-sink-volume @DEFAULT_SINK@ -10%")},
+    	{0,   				XF86XK_AudioRaiseVolume,  spawn, SHCMD("pactl set-sink-volume @DEFAULT_SINK@ +10%")},
+    	{0,   				XF86XK_AudioMute,         spawn, SHCMD("pactl set-sink-mute @DEFAULT_SINK@ toggle")},
+	{ MODKEY|ShiftMask,			XK_w,      spawn,          SHCMD("slock") },
+
 };
 
 /* button definitions */
